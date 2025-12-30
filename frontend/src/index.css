@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Make page take full height */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Global body styles */
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Optional: simple link styling (you can also just use Tailwind classes) */
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* You can still customize buttons globally if you want,
+   but usually better to use Tailwind classes on each button */
+button {
+  font-family: inherit;
+}

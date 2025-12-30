@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+opencv-python
+numpy
+python-dotenv
+# Mediapipe for different platforms:
+mediapipe; platform_system != "Darwin" or platform.machine != "arm64"
+mediapipe-silicon; platform_system == "Darwin" and platform.machine == "arm64"
+protobuf>=3.11,<4
+python-multipart
+pyttsx3
+scikit-learn
+pandas
+joblib

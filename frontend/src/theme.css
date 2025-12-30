@@ -1,0 +1,168 @@
+/* src/theme.css */
+/* ---------------------------------
+   Shared design tokens
+---------------------------------- */
+
+/* Defaults (will be overridden by data-theme on body) */
+body {
+  /* Lavender accent */
+  --sg-accent: #c4b5fd;          /* lavender */
+  --sg-accent-strong: #a855f7;  /* deeper lavender */
+  --sg-accent-soft: #ede9fe;
+
+  /* These will be set by [data-theme] below, but give safe defaults */
+  --sg-bg-page: #020617;
+  --sg-bg-card: #020617;
+  --sg-border-subtle: #1e293b;
+  --sg-text-main: #e5e7eb;
+  --sg-text-muted: #9ca3af;
+
+  background-color: var(--sg-bg-page);
+  color: var(--sg-text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ---------------------------------
+   Dark theme
+---------------------------------- */
+
+body[data-theme="dark"] {
+  --sg-bg-page: #020617;   /* slate-950 */
+  --sg-bg-card: #020617;   /* dark cards */
+  --sg-border-subtle: #1e293b;
+  --sg-text-main: #e5e7eb;
+  --sg-text-muted: #9ca3af;
+
+  background-color: var(--sg-bg-page);
+  color: var(--sg-text-main);
+}
+
+/* ---------------------------------
+   Light theme
+---------------------------------- */
+
+body[data-theme="light"] {
+  --sg-bg-page: #f9fafb;   /* gray-50 */
+  --sg-bg-card: #ffffff;   /* white-ish cards */
+  --sg-border-subtle: #d1d5db;
+  --sg-text-main: #111827; /* gray-900 */
+  --sg-text-muted: #6b7280;/* gray-500 */
+
+  background-color: var(--sg-bg-page);
+  color: var(--sg-text-main);
+}
+
+/* ---------------------------------
+   Map Tailwind-ish classes to theme
+   (so existing JSX keeps working)
+---------------------------------- */
+
+/* Page background */
+.bg-slate-950 {
+  background-color: var(--sg-bg-page) !important;
+}
+
+/* Card backgrounds */
+.bg-slate-900,
+.bg-slate-900\/80,
+.bg-slate-900\/70,
+.bg-slate-900\/60 {
+  background-color: var(--sg-bg-card) !important;
+}
+
+/* Subtle borders */
+.border-slate-800 {
+  border-color: var(--sg-border-subtle) !important;
+}
+
+/* Generic muted text helper */
+.text-muted {
+  color: var(--sg-text-muted);
+}
+
+/* ---------------------------------
+   Lavender accent overrides
+   (replaces the neon green)
+---------------------------------- */
+
+/* Buttons / pills that were emerald / teal */
+.bg-emerald-500,
+.bg-emerald-400,
+.bg-emerald-500\/90,
+.bg-teal-500,
+.bg-teal-400,
+.bg-emerald-500:hover,
+.bg-emerald-400:hover {
+  background-color: var(--sg-accent-strong) !important;
+  color: #020617 !important;
+}
+
+/* Accent text */
+.text-emerald-400,
+.text-emerald-500,
+.text-teal-300,
+.text-teal-400 {
+  color: var(--sg-accent) !important;
+}
+
+/* Accent borders */
+.border-emerald-500,
+.border-teal-400 {
+  border-color: var(--sg-accent-strong) !important;
+}
+
+/* “Selected” pill look if you want a data-variant */
+button[data-variant="pill-active"] {
+  background-color: var(--sg-accent-strong);
+  color: #020617;
+}
+
+/* Accent links if you use this utility */
+a.text-accent,
+span.text-accent {
+  color: var(--sg-accent-strong);
+}
+
+/* Code / pre blocks */
+pre {
+  background-color: rgba(15, 23, 42, 0.7);
+}
+
+/* ---------------------------------
+   Light-mode specific fixes
+   (so it doesn't look washed out)
+---------------------------------- */
+
+/* In light mode, darken text utilities that were "nearly white" */
+body[data-theme="light"] .text-slate-50,
+body[data-theme="light"] .text-slate-100,
+body[data-theme="light"] .text-slate-200,
+body[data-theme="light"] .text-slate-300,
+body[data-theme="light"] .text-slate-400 {
+  color: var(--sg-text-main) !important;
+}
+
+/* Muted text stays muted but readable */
+body[data-theme="light"] .text-slate-500,
+body[data-theme="light"] .text-slate-600 {
+  color: var(--sg-text-muted) !important;
+}
+
+/* Light mode: keep cards light rather than dark */
+body[data-theme="light"] .bg-slate-900,
+body[data-theme="light"] .bg-slate-900\/80,
+body[data-theme="light"] .bg-slate-900\/70,
+body[data-theme="light"] .bg-slate-900\/60 {
+  background-color: var(--sg-bg-card) !important;
+}
+
+/* Light mode: make the "page" background a soft gray so cards still pop */
+body[data-theme="light"] .bg-slate-950 {
+  background-color: #e5e7eb !important; /* gray-200-ish */
+}
+
+/* Code blocks in light mode: lighter background */
+body[data-theme="light"] pre {
+  background-color: #f3f4f6; /* gray-100 */
+}
