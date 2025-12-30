@@ -4,9 +4,9 @@ from typing import List, Dict
 
 import cv2
 
-from backend.pose.mediapipe_pose import MediaPipePoseEstimator
-from backend.exercises.squat import SquatSession
-from backend.feedback.engine import FeedbackEngine
+from pose.mediapipe_pose import MediaPipePoseEstimator
+from exercises.squat import SquatSession
+from feedback.engine import FeedbackEngine
 
 
 def keypoints_visible_enough(

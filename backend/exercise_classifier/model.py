@@ -1,6 +1,7 @@
-import joblib
 import numpy as np
 from typing import Optional
+
+from exercise_classifier.model_loader import load_exercise_model
 
 
 class ExerciseClassifier:
@@ -10,11 +11,10 @@ class ExerciseClassifier:
 
     def __init__(
         self,
-        model_path: str,
         confidence_threshold: float = 0.6,
         reject_label: Optional[str] = None,
     ):
-        self.model = joblib.load(model_path)
+        self.model = load_exercise_model()
         self.confidence_threshold = confidence_threshold
         self.reject_label = reject_label
 

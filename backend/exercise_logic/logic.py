@@ -1,5 +1,5 @@
 from typing import List, Tuple, Dict
-from backend.utils.angles import angle_3pts
+from utils.angles import angle_3pts
 
 LEFT_HIP = 23
 RIGHT_HIP = 24

@@ -2,7 +2,7 @@
 from typing import Dict, List, Any, Optional
 
 from .base import BaseExerciseSession
-from backend.utils.angles import angle_3pts
+from utils.angles import angle_3pts
 
 # MediaPipe Pose landmark indices (BlazePose full body)
 # Reference: https://developers.google.com/mediapipe/solutions/vision/pose_landmarker

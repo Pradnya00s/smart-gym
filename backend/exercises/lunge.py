@@ -3,7 +3,7 @@ from typing import Dict, List, Any, Optional
 import math
 
 from .base import BaseExerciseSession
-from backend.utils.angles import angle_3pts
+from utils.angles import angle_3pts
 
 # MediaPipe indices
 LEFT_HIP = 23

@@ -6,17 +6,17 @@ import tempfile
 import uuid
 from typing import Any, Dict, List
 
-from backend.pose.mediapipe_pose import MediaPipePoseEstimator
-from backend.feedback.engine import FeedbackEngine
+from pose.mediapipe_pose import MediaPipePoseEstimator
+from feedback.engine import FeedbackEngine
 
-from backend.exercises.squat import SquatSession
-from backend.exercises.pushup import PushupSession
-from backend.exercises.bicep_curl import BicepCurlSession
-from backend.exercises.deadlift import DeadliftSession
-from backend.exercises.plank import PlankSession
-from backend.exercises.lunge import LungeSession
-from backend.exercises.bench_press import BenchPressSession
-from backend.exercises.lat_pulldown import LatPulldownSession
+from exercises.squat import SquatSession
+from exercises.pushup import PushupSession
+from exercises.bicep_curl import BicepCurlSession
+from exercises.deadlift import DeadliftSession
+from exercises.plank import PlankSession
+from exercises.lunge import LungeSession
+from exercises.bench_press import BenchPressSession
+from exercises.lat_pulldown import LatPulldownSession
 
 
 def create_exercise_session(name: str):

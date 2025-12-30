@@ -11,13 +11,15 @@ from fastapi import FastAPI, UploadFile, File, WebSocket, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from backend.pose.pose_detector import PoseDetector
-from backend.exercise_classifier.model import ExerciseClassifier
-from backend.exercise_logic.logic import analyze_frame, finalize_analysis
-from backend.exercise_classifier.features import build_feature_vector, FEATURE_NAMES
-from backend.planner.diet_planner import DietPlanner
-from backend.planner.workout_planner import WorkoutPlanner
-from backend.exercise_classifier.temporal_smoother import TemporalExerciseSmoother
+from pose.pose_detector import PoseDetector
+
+from exercise_classifier.model import ExerciseClassifier
+from exercise_logic.logic import analyze_frame, finalize_analysis
+from exercise_classifier.features import build_feature_vector, FEATURE_NAMES
+from planner.diet_planner import DietPlanner
+from planner.workout_planner import WorkoutPlanner
+from exercise_classifier.temporal_smoother import TemporalExerciseSmoother
+
 
 
 
@@ -48,7 +50,8 @@ app.mount(
 
 pose_detector = PoseDetector()
 classifier = ExerciseClassifier(
-    "backend/exercise_classifier/exercise_classifier.joblib"
+    confidence_threshold=0.6,
+    reject_label=None
 )
 
 smoother = TemporalExerciseSmoother(

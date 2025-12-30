@@ -5,7 +5,7 @@ from collections import deque
 from typing import Deque, Dict, List, Any
 import time
 
-from backend.utils.smoothing import EMASmoother
+from utils.smoothing import EMASmoother
 
 
 class BaseExerciseSession(ABC):

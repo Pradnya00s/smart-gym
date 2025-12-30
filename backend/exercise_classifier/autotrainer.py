@@ -6,8 +6,8 @@ import time
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from backend.exercise_classifier.dataset_manager import DatasetManager
-from backend.exercise_classifier.features import FEATURE_NAMES
+from exercise_classifier.dataset_manager import DatasetManager
+from exercise_classifier.features import FEATURE_NAMES
 
 MODEL_PATH = "backend/exercise_classifier/exercise_classifier.joblib"
 

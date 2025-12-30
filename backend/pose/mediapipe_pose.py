@@ -3,7 +3,7 @@
 import cv2
 import mediapipe as mp
 
-from backend.utils.smoothing import (
+from utils.smoothing import (
     RollingAverageSmoother,
     VisibilityFilter,
     smooth_keypoints,

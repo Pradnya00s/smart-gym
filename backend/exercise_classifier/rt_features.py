@@ -1,7 +1,7 @@
 # backend/exercise_classifier/rt_features.py
 
 import numpy as np
-from backend.exercise_classifier.features import (
+from exercise_classifier.features import (
     FEATURE_NAMES,
     extract_angle_features,
     extract_position_features,

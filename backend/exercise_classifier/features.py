@@ -4,7 +4,7 @@ from typing import Dict, List
 import math
 import numpy as np
 
-from backend.utils.angles import angle_3pts
+from utils.angles import angle_3pts
 
 # MediaPipe indices
 NOSE = 0
