@@ -12,3 +12,5 @@ pyttsx3
 scikit-learn
 pandas
 joblib
+requests
+groq
