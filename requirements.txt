@@ -13,4 +13,5 @@ scikit-learn
 pandas
 joblib
 requests
-groq
+groq-sdk
+
