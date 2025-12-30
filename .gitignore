@@ -33,6 +33,7 @@ __pycache__/
 *.pyc
 .env
 *.joblib
+backend/.env
 
 # ML / data
 smart_gym_dataset/
