@@ -3,9 +3,13 @@ uvicorn[standard]
 opencv-python
 numpy
 python-dotenv
-# Mediapipe for different platforms:
-mediapipe; platform_system != "Darwin" or platform.machine != "arm64"
+
+# MediaPipe (Linux / Render / Windows)
+mediapipe==0.10.11; platform_system != "Darwin"
+
+# MediaPipe for Apple Silicon (macOS M1/M2)
 mediapipe-silicon; platform_system == "Darwin" and platform.machine == "arm64"
+
 protobuf>=3.11,<4
 python-multipart
 pyttsx3
@@ -14,4 +18,3 @@ pandas
 joblib
 requests
 groq
-
